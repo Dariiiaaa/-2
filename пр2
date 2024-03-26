@@ -1,0 +1,144 @@
+def task_1():
+    a = float(input("Введіть перше число: "))
+    b = float(input("Введіть друге число: "))
+    c = float(input("Введіть третє число: "))
+    
+    def square_or_fourth_power(x):
+        if x >= 0:
+            return x ** 2
+        else:
+            return x ** 4
+    
+    result_a = square_or_fourth_power(a)
+    result_b = square_or_fourth_power(b)
+    result_c = square_or_fourth_power(c)
+    
+    print(f"Результат: {result_a}, {result_b}, {result_c}")
+
+
+def task_2():
+    x1, y1 = map(float, input("Введіть координати точки A (x1 y1): ").split())
+    x2, y2 = map(float, input("Введіть координати точки B (x2 y2): ").split())
+    
+    distance_a = (x1 ** 2 + y1 ** 2) ** 0.5
+    distance_b = (x2 ** 2 + y2 ** 2) ** 0.5
+    
+    if distance_a < distance_b:
+        print("Точка A знаходиться ближче до початку координат.")
+    elif distance_b < distance_a:
+        print("Точка B знаходиться ближче до початку координат.")
+    else:
+        print("Точки A і B розташовані на однаковій відстані від початку координат.")
+
+
+def task_3():
+    angle1 = float(input("Введіть перший кут трикутника: "))
+    angle2 = float(input("Введіть другий кут трикутника: "))
+    
+    angle3 = 180 - angle1 - angle2
+    
+    if angle1 > 0 and angle2 > 0 and angle3 > 0:
+        print("Такий трикутник існує.")
+        if angle1 == 90 or angle2 == 90 or angle3 == 90:
+            print("Трикутник є прямокутним.")
+        else:
+            print("Трикутник не є прямокутним.")
+    else:
+        print("Такий трикутник не існує.")
+
+
+def task_4():
+    x = float(input("Введіть перше число: "))
+    y = float(input("Введіть друге число: "))
+    
+    if x != y:
+        x, y = max(x, y), (x + y) / 2
+    else:
+        x, y = 0, 0
+    
+    print(f"Результат: {x}, {y}")
+
+
+def task_5():
+    x, y = map(float, input("Введіть координати точки A (x y): ").split())
+    
+    if x == 0 and y == 0:
+        print("Точка розташована в початку координат.")
+    elif x == 0:
+        print("Точка лежить на вісі Y.")
+    elif y == 0:
+        print("Точка лежить на вісі X.")
+    elif x > 0 and y > 0:
+        print("Точка лежить в першому квадранті.")
+    elif x < 0 and y > 0:
+        print("Точка лежить в другому квадранті.")
+    elif x < 0 and y < 0:
+        print("Точка лежить в третьому квадранті.")
+    else:
+        print("Точка лежить в четвертому квадранті.")
+
+
+def task_6():
+    a = int(input("Введіть перше число: "))
+    b = int(input("Введіть друге число: "))
+    
+    if a != b:
+        a, b = max(a, b), max(a, b)
+    else:
+        a, b = 0, 0
+    
+    print(f"Результат: {a}, {b}")
+
+
+def task_7():
+    a = int(input("Введіть перше число: "))
+    b = int(input("Введіть друге число: "))
+    c = int(input("Введіть третє число: "))
+    
+    count = sum(n < 0 for n in [a, b, c])
+    
+    print(f"Кількість негативних чисел: {count}")
+
+
+def task_8():
+    a = int(input("Введіть перше число: "))
+    b = int(input("Введіть друге число: "))
+    c = int(input("Введіть третє число: "))
+    
+    count = sum(n > 0 for n in [a, b, c])
+    
+    print(f"Кількість додатніх чисел: {count}")
+
+
+def task_9():
+    a = int(input("Введіть перше число: "))
+    b = int(input("Введіть друге число: "))
+    c = int(input("Введіть третє число: "))
+    
+    count = sum(n == int(n) for n in [a, b, c])
+    
+    print(f"Кількість цілих чисел: {count}")
+
+
+def task_10():
+    a = int(input("Введіть перше число: "))
+    b = int(input("Введіть друге число: "))
+    c = int(input("Введіть третє число: "))
+    k = int(input("Введіть число, дільник якого шукаємо: "))
+    
+    divisors = [n for n in [a, b, c] if n % k == 0]
+    
+    print(f"Число {k} є дільником чисел: {divisors}")
+
+
+# Викликати функції можна, наприклад, так:
+task_1()
+task_2()
+task_3()
+task_4()
+task_5()
+task_6()
+task_7()
+task_8()
+task_9()
+task_10()
